@@ -11,6 +11,7 @@
 #include <regex>
 #include <cassert>
 #include <cstring>
+#include <iostream>
 
 #if defined(_WIN32) && !defined(_POSIX_MAPPED_FILES)
 #define WIN32_LEAN_AND_MEAN
@@ -378,6 +379,8 @@ static bool llama_model_load(
     auto fin = std::ifstream(fname, std::ios::binary);
     if (!fin) {
         fprintf(stderr, "%s: failed to open '%s'\n", __func__, fname.c_str());
+        std::cerr << "Error opening file: " << std::strerror(errno) << std::endl;
+        fprintf(stderr, "%d access", access(fname.c_str(), R_OK));
         return false;
     }
 
