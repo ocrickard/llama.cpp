@@ -62,17 +62,17 @@ static const size_t MB = 1024*1024;
 //       needs modifications in ggml
 
 static const std::map<e_model, size_t> MEM_REQ_SCRATCH0 = {
-    { MODEL_7B,    512ull*MB },
-    { MODEL_13B,   512ull*MB },
-    { MODEL_30B,   512ull*MB },
-    { MODEL_65B,   512ull*MB },
+    { MODEL_7B,    128ull*MB },
+    { MODEL_13B,   128ull*MB },
+    { MODEL_30B,   128ull*MB },
+    { MODEL_65B,   128ull*MB },
 };
 
 static const std::map<e_model, size_t> MEM_REQ_SCRATCH1 = {
-    { MODEL_7B,    512ull*MB },
-    { MODEL_13B,   512ull*MB },
-    { MODEL_30B,   512ull*MB },
-    { MODEL_65B,   512ull*MB },
+    { MODEL_7B,    128ull*MB },
+    { MODEL_13B,   128ull*MB },
+    { MODEL_30B,   128ull*MB },
+    { MODEL_65B,   128ull*MB },
 };
 
 // 2*n_embd*n_ctx*n_layer*sizeof(float16)
